@@ -4,6 +4,6 @@ services:
     go:
         image: golang:latest
         volumes:
-            - .:/var/app
+            - ./katas:/go/src/katas
         tty: true
-        working_dir: /var/app
+        working_dir: /go/src/katas
