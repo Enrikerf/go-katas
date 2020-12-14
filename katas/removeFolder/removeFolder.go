@@ -7,6 +7,7 @@ import (
 
 func main() {
 	fmt.Printf("%v \n", removeFolder([]string{"/a", "/a/b", "/c/d", "/c/d/e", "/c/f", "/c/f/g"}, "c"))
+	fmt.Printf("%v \n", removeFolder([]string{"/a", "/a/b", "/c/d", "/c/d/e", "/c/f", "/c/f/g"}, "d"))
 }
 
 func removeFolder(folderStructure []string, folderName string) (result []string) {
@@ -14,7 +15,7 @@ func removeFolder(folderStructure []string, folderName string) (result []string)
 	for _, element := range folderStructure {
 		filteredElement := seekAndDestroy(element, folderName)
 		if len(filteredElement) > 0 {
-			newFolderStructure = append(newFolderStructure,filteredElement)
+			newFolderStructure = append(newFolderStructure, filteredElement)
 		}
 	}
 	result = newFolderStructure
